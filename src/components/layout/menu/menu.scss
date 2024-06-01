@@ -1,0 +1,96 @@
+@import '../../../assets/variavbles.scss';
+.menu {
+    width: 240px;
+    background-color: $white;
+    margin: 0;
+    height: 95vh;
+    padding: 20px;
+    & .menu-content {
+        width: 100%;
+        & .menu-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            & .logotype {
+                & .logo-link {
+                    font-size: 28px;
+                    text-decoration: none;
+                    color: $primary-color;
+                }
+            }
+        }
+        & .menu-items {
+            display: flex;
+            flex-direction: column;
+            & .item-user {
+                & .user {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    & .user-image {
+                        width: 50px;
+                        height: 50px;
+                        & .icon {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                    & .user-info {
+                        margin: 0;
+                        margin-left: 10px;
+                        text-decoration: none;
+                        & .names {
+                            & h3 {
+                                margin: 0;
+                                color: black;
+                                font-weight: 400;
+                                font-size: 16px;
+                            }
+                            & p {
+                                margin: 0;
+                                font-weight: 200;
+                                font-size: 14px;
+                                color: gray;
+                            }
+                        }
+                    }
+                }
+            }
+            & .menu-linkes {
+                width: 100%;
+                margin-top: 20px;
+                ul {
+                    padding: 0;
+                    padding-left: 10px;
+                    li {
+                        list-style: none;
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+                        & .menu-link {
+                            display: flex;
+                            align-items: center;
+                            padding: 5px;
+                            width: 100%;
+                            color: #334D6E;
+                            text-decoration: none;
+                            &.active {
+                                color: $primary-color;
+                                & .icon-menu {
+                                    color: $primary-color;
+                                }
+                            }
+                            & .icon-menu {
+                                margin-right: 10px;
+                                color: gray;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
