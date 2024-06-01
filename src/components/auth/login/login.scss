@@ -1,0 +1,88 @@
+@import '../../../assets/variavbles.scss';
+.login-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-family: $ff;
+    & .signIn-container {
+        margin-top: 100px;
+        width: 400px;
+        height: 400px;
+        background-color: $white;
+        padding: 15px;
+        border-radius: 15px;
+        & .signIn-header {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 140px;
+            align-items: center;
+            & h1 {
+                font-size: 30px;
+                font-weight: 600;
+                margin-top: 30px;
+                margin-bottom: 0;
+            }
+            & p {
+                font-size: 14px;
+                color: #393D44;
+                & .To-register {
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+            }
+        }
+        .form-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            .form-inputs {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .fieldInput {
+                  margin: 10px;
+                  height: 40px;
+                  &:hover {
+                    border-color: $primary-color;
+                  }
+                  .MuiOutlinedInput-root {
+                    height: 100%;
+                    &:hover .MuiOutlinedInput-notchedOutline {
+                      border-color: $primary-color;
+                    }
+                  }
+                  .MuiInputLabel-root {
+                    font-size: 14px;
+                    top: -6px;
+                  }
+                }
+                & .forgot-pass {
+                    width: 100%;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+              }
+              .buttons {
+                width: 100%;
+                display: flex;
+                margin-top: 20px;
+                align-items: center;
+                & .button {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px;
+                    background-color: $primary-color;
+                    text-transform: capitalize;
+                    font-size: 16px;
+                }
+              }
+            }
+        }
+    }
