@@ -14,7 +14,7 @@ const Menu = () => {
             <div className="menu-content">
                 <div className="menu-header">
                     <div className="logotype">
-                        <Link className='logo-link' to="/">ProfSalon</Link>
+                        <Link className='logo-link' to="/">ПрофСалон</Link>
                     </div>
                 </div>
                 <div className="menu-items">
@@ -27,7 +27,7 @@ const Menu = () => {
                             </div>
                             <NavLink to="/settings" className="user-info">
                                 <div className="names">
-                                    <h3>Sierra Andreson</h3>
+                                    <h3>Сиерра Андресон</h3>
                                     <p>sierraanersion@gmail.com</p>
                                 </div>
                             </NavLink>
@@ -37,28 +37,28 @@ const Menu = () => {
                         <ul>
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/">
-                                    <DashboardOutlinedIcon className="icon-menu" /> Dashboard
+                                    <DashboardOutlinedIcon className="icon-menu" /> Панель управления
                                 </NavLink>
                             </li>
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/teacherai">
-                                    <ChatBubbleOutlineOutlinedIcon className="icon-menu" /> Chat Ai
+                                    <ChatBubbleOutlineOutlinedIcon className="icon-menu" /> Чат Ai
                                 </NavLink>
                             </li>
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/clients">
-                                    <PeopleAltOutlinedIcon className="icon-menu" /> Clients
+                                    <PeopleAltOutlinedIcon className="icon-menu" /> Клиенты
                                 </NavLink>
                             </li>
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/kassa">
-                                    <BorderAllOutlinedIcon className="icon-menu" /> Deals
+                                    <BorderAllOutlinedIcon className="icon-menu" /> Касса
                                 </NavLink>
                             </li>
                             <hr />
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/settings">
-                                    <SettingsOutlinedIcon className="icon-menu" /> Settings
+                                    <SettingsOutlinedIcon className="icon-menu" /> Настройки
                                 </NavLink>
                             </li>
                         </ul>

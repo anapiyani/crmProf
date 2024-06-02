@@ -4,6 +4,7 @@ import RegisterContainer from './containers/registerContainer/registerContainer'
 import TeacherAiContainer from './containers/teacherAiContainer/teacherAiContainer';
 import DashboardContainer from './containers/dashboardContainer/dashboard';
 import Menu from './components/layout/menu/menu';
+import ClientsContainer from './containers/clientsContainer/clientsContainer';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path='/dashboard' element={<DashboardContainer />} />
             <Route path='/teacherai' element={<TeacherAiContainer />} />
             <Route path='/' element={<DashboardContainer />} />
+            <Route path='/clients' element={<ClientsContainer/>} />
           </Route>
         </Routes>
       </BrowserRouter>

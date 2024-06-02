@@ -19,14 +19,14 @@ const Register = () => {
         <div className="register-container">
             <div className="signUp-container">
                 <div className="signUp-header">
-                    <h1>Sign up</h1>
-                    <p>Already have an account? <Link className='To-register' to="/login">Sign in here</Link></p>
+                    <h1>Регистрация</h1>
+                    <p>Уже есть аккаунт? <Link className='To-register' to="/login">Войдите здесь</Link></p>
                 </div>
                 <form className="form-content">
                     <div className="form-inputs-signUp">
                         <div className="name">
-                            <TextField required className='fieldInputSignUp' id="outlined-basic" label="First Name" variant="outlined" />
-                            <TextField required className='fieldInputSignUp' id="outlined-basic" label="Last Name" variant="outlined" />
+                            <TextField required className='fieldInputSignUp' id="outlined-basic" label="Имя" variant="outlined" />
+                            <TextField required className='fieldInputSignUp' id="outlined-basic" label="Фамилия" variant="outlined" />
                         </div>
                             <TextField required className='fieldInput' id="outlined-basic" label="Email" variant="outlined" />
                             <TextField
@@ -34,7 +34,7 @@ const Register = () => {
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
                             id="outlined-basic"
-                            label="Password"
+                            label="Пароль"
                             variant="outlined"
                             InputProps={{
                                 endAdornment: (
@@ -56,7 +56,7 @@ const Register = () => {
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
                             id="outlined-basic"
-                            label="Password"
+                            label="Повторите пароль"
                             variant="outlined"
                             InputProps={{
                                 endAdornment: (
@@ -75,7 +75,7 @@ const Register = () => {
                             />                    
                         </div>
                     <div className="buttons">
-                        <Button className='button' variant='contained'>Create an account</Button>
+                        <Button className='button' variant='contained'>Создать аккаунт</Button>
                     </div>
                 </form>
             </div>

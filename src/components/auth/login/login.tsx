@@ -19,8 +19,8 @@ const Login = () => {
         <div className="login-container">
             <div className="signIn-container">
                 <div className="signIn-header">
-                    <h1>Sign in</h1>
-                    <p>Don't have an account yet? <Link className='To-register' to="/register">Sign up here</Link></p>
+                    <h1>Войти</h1>
+                    <p>Еще нет аккаунта? <Link className='To-register' to="/register">Зарегистрируйтесь здесь</Link></p>
                 </div>
                 <form className="form-content">
                     <div className="form-inputs">
@@ -30,7 +30,7 @@ const Login = () => {
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
                             id="outlined-basic"
-                            label="Password"
+                            label="Пароль"
                             variant="outlined"
                             InputProps={{
                                 endAdornment: (
@@ -47,10 +47,10 @@ const Login = () => {
                                 ),
                             }}
                             />
-                        <Link to="forgot-password" className='forgot-pass'>Forgot password?</Link>    
+                        <Link to="forgot-password" className='forgot-pass'>Забыли пароль?</Link>    
                     </div>
                     <div className="buttons">
-                        <Button className='button' variant='contained'>Sign in</Button>
+                        <Button className='button' variant='contained'>Войти</Button>
                     </div>
                 </form>
             </div>

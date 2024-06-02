@@ -13,7 +13,7 @@ const TeacherAi = () => {
                     <div className="chat-header">
                         <div className="ai-name">
                             <SmartToyOutlinedIcon />
-                            <p>Chat AI</p>
+                            <p>Чат AI</p>
                         </div>
                         <div className="settings">
                             {/* onclick add open menu :) */}
@@ -53,7 +53,7 @@ const TeacherAi = () => {
                     </div>
                     <div className="form-send">
                         <form className="form">
-                            <OutlinedInput className='inputOutlined' placeholder='message...' />
+                            <OutlinedInput className='inputOutlined' placeholder='Сообщение...' />
                             <Button type="submit" className='formSendButton' variant="text"><SendOutlinedIcon/></Button>
                         </form>
                     </div>
