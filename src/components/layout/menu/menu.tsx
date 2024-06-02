@@ -42,7 +42,7 @@ const Menu = () => {
                             </li>
                             <li className='menu-link-item'>
                                 <NavLink className='menu-link' to="/teacherai">
-                                    <ChatBubbleOutlineOutlinedIcon className="icon-menu" /> Teacher Ai
+                                    <ChatBubbleOutlineOutlinedIcon className="icon-menu" /> Chat Ai
                                 </NavLink>
                             </li>
                             <li className='menu-link-item'>

@@ -13,7 +13,7 @@ const TeacherAi = () => {
                     <div className="chat-header">
                         <div className="ai-name">
                             <SmartToyOutlinedIcon />
-                            <p>Teacher AI</p>
+                            <p>Chat AI</p>
                         </div>
                         <div className="settings">
                             {/* onclick add open menu :) */}
