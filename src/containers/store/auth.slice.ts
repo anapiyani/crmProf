@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TAuthState, TLoginState } from '../../types/types';
 import axiosCrm from '../../config/axios.config';
 
@@ -17,7 +17,7 @@ export const signInUser = createAsyncThunk(
     'authSlice/signInUser',
     async (loginData: TLoginState) => {
         const response = await axiosCrm.post('/users/login/', loginData);
-        console.log(response, loginData);
+        console.log(response);
         return response;
     }
 )

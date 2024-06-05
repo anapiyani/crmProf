@@ -1,0 +1,8 @@
+.clients {
+  width: 100%;
+}
+.clients .clients-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

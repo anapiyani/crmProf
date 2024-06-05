@@ -1,0 +1,110 @@
+.menu {
+  width: 240px;
+  background-color: white;
+  margin: 0;
+  height: 95vh;
+  padding: 20px;
+}
+.menu .menu-content {
+  width: 100%;
+}
+.menu .menu-content .menu-header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.menu .menu-content .menu-header .logotype .logo-link {
+  font-size: 28px;
+  text-decoration: none;
+  color: #109CF1;
+}
+.menu .menu-content .menu-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.menu .menu-content .menu-items .item-user .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+.menu .menu-content .menu-items .item-user .user .user-image {
+  width: 50px;
+  height: 50px;
+}
+.menu .menu-content .menu-items .item-user .user .user-image .icon {
+  width: 50px;
+  height: 50px;
+}
+.menu .menu-content .menu-items .item-user .user .user-info {
+  margin: 0;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.menu .menu-content .menu-items .item-user .user .user-info .names h3 {
+  margin: 0;
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+}
+.menu .menu-content .menu-items .item-user .user .user-info .names p {
+  margin: 0;
+  font-weight: 200;
+  font-size: 14px;
+  color: gray;
+}
+.menu .menu-content .menu-items .menu-linkes {
+  width: 100%;
+  margin-top: 20px;
+}
+.menu .menu-content .menu-items .menu-linkes ul {
+  padding: 0;
+  padding-left: 10px;
+}
+.menu .menu-content .menu-items .menu-linkes ul li {
+  list-style: none;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.menu .menu-content .menu-items .menu-linkes ul li .menu-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  width: 100%;
+  color: #334D6E;
+  text-decoration: none;
+}
+.menu .menu-content .menu-items .menu-linkes ul li .menu-link.active {
+  color: #109CF1;
+}
+.menu .menu-content .menu-items .menu-linkes ul li .menu-link.active .icon-menu {
+  color: #109CF1;
+}
+.menu .menu-content .menu-items .menu-linkes ul li .menu-link .icon-menu {
+  margin-right: 10px;
+  color: gray;
+  font-size: 20px;
+}

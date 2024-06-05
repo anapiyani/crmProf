@@ -1,0 +1,140 @@
+.register-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+.register-container .signUp-container {
+  margin-top: 30px;
+  width: 400px;
+  height: 100%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+.register-container .signUp-container .signUp-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 140px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.register-container .signUp-container .signUp-header h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+.register-container .signUp-container .signUp-header p {
+  font-size: 14px;
+  color: #393D44;
+}
+.register-container .signUp-container .signUp-header p .To-register {
+  color: #109CF1;
+  text-decoration: none;
+}
+.register-container .signUp-container .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name:hover {
+  border-color: #109CF1;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name .MuiOutlinedInput-root {
+  border-radius: 10px;
+  height: 100%;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #109CF1;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name .MuiInputLabel-root {
+  font-size: 14px;
+  top: -6px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .name .MuiTextField-root:first-child {
+  margin-right: 10px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .fieldInput {
+  margin: 10px;
+  height: 40px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .fieldInput:hover {
+  border-color: #109CF1;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .fieldInput .MuiOutlinedInput-root {
+  height: 100%;
+  border-radius: 10px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .fieldInput .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #109CF1;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .fieldInput .MuiInputLabel-root {
+  font-size: 14px;
+  top: -6px;
+}
+.register-container .signUp-container .form-content .form-inputs-signUp .forgot-pass {
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #109CF1;
+  text-decoration: none;
+}
+.register-container .signUp-container .form-content .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.register-container .signUp-container .form-content .buttons .button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #109CF1;
+  text-transform: capitalize;
+  font-size: 16px;
+  border-radius: 10px;
+}
