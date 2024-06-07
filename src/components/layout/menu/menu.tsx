@@ -61,7 +61,12 @@ const Menu = () => {
           <div className="menu-linkes">
             <ul>
               <li className="menu-link-item">
-                <NavLink className="menu-link" to="/">
+                <NavLink className="menu-link" to="/dashboard">
+                  <BorderAllOutlinedIcon className="icon-menu" /> Дашборд
+                </NavLink>
+              </li>
+              <li className="menu-link-item">
+                <NavLink className="menu-link" to="/services">
                   <DashboardOutlinedIcon className="icon-menu" /> Сервисы
                 </NavLink>
               </li>
@@ -81,8 +86,9 @@ const Menu = () => {
                 </NavLink>
               </li>
               <li className="menu-link-item">
-                <NavLink className="menu-link" to="/kassa">
-                  <BorderAllOutlinedIcon className="icon-menu" /> Касса
+                <NavLink className="menu-link" to="/staff">
+                  <SupervisorAccountOutlinedIcon className="icon-menu" />{" "}
+                  Сотрудники
                 </NavLink>
               </li>
               <hr />

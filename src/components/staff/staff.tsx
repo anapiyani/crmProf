@@ -1,5 +1,5 @@
-import { TAuthState, TAuthStateInit } from "../../types/types";
-import "./admins.scss";
+import { TAuthStateInit } from "../../types/types";
+import "./staff.scss";
 import StaffTable from "./Table/staffTable";
 
 type TProps = {

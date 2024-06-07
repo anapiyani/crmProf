@@ -49,3 +49,22 @@ export type TAuthStateInit = {
   role: string;
   phone_number: string | null;
 };
+
+export type TRequest = {
+  id: number;
+  user_info: {
+    id: number;
+    email: string;
+    first_name: string;
+    last_name: string;
+    middle_name: string;
+    role: string;
+    phone_number: string;
+  };
+  status: string;
+  created_at: string;
+  updated_at: string;
+  paid: boolean;
+  service: number;
+  user: number;
+};

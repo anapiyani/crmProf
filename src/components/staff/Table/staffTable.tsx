@@ -1,4 +1,4 @@
-import "./adminTable.scss";
+import "./staffTable.scss";
 import {
   Table,
   TableBody,
@@ -60,7 +60,7 @@ const StaffTable = (props: TProps) => {
                 client.last_name || ""
               }`}</TableCell>
               <TableCell>{client.phone_number || ""}</TableCell>
-              <TableCell>Сотрудники</TableCell>{" "}
+              <TableCell>Сотрудник</TableCell>{" "}
             </TableRow>
           ))}
         </TableBody>
