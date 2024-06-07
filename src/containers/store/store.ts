@@ -5,6 +5,7 @@ import loginReducer from "./login.slice";
 import servicesReducer from "./services.slice";
 import clientsReducer from "./clients.slice";
 import dashboardReducer from "./dashboard.slice";
+import aiReducer from "./ai.slice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     services: servicesReducer,
     clients: clientsReducer,
     dashboard: dashboardReducer,
+    ai: aiReducer,
   },
 });
 

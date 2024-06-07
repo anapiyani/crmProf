@@ -1,10 +1,9 @@
-import TeacherAi from "../../components/teacherAi/teacherAi"
-
+import { useSelector } from "react-redux";
+import TeacherAi from "../../components/teacherAi/teacherAi";
+import { RootState } from "../store/store";
 
 const TeacherAiContainer = () => {
-    return (
-        <TeacherAi/>
-    )
-}
+  return <TeacherAi />;
+};
 
 export default TeacherAiContainer;

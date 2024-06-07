@@ -27,7 +27,7 @@ const LoginContainer = () => {
   useEffect(() => {
     if (isSuccesLogin) {
       dispatch(fetchUserData());
-      navigate("/services");
+      navigate("/dashboard");
     }
 
     if (isSuccessRegiser) {
