@@ -1,62 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { AppDispatch, RootState } from "../../../containers/store/store";
+import React from "react";
 import {
   IconButton,
   InputAdornment,
   CircularProgress,
   Alert,
 } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-import { TAuthState } from "../../../types/types";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import { createNewUser } from "../../../containers/store/auth.slice";
+import { TAuthState } from "../../../types/types";
 import "./register.scss";
 
-const Register = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
-  const isLoading = useSelector((state: RootState) => state.auth.isLoading);
-  const isError = useSelector((state: RootState) => state.auth.isError);
-  const isSuccess = useSelector((state: RootState) => state.auth.isSuccess);
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+type TProps = {
+  formData: TAuthState;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  isLoading: boolean;
+  isError: string | null;
+  showPassword: boolean;
+  handleClickShowPassword: () => void;
+};
 
-  useEffect(() => {
-    if (isSuccess) {
-      navigate("/login");
-    }
-  }, [isSuccess, navigate, dispatch]);
-
-  const [formData, setFormData] = useState<TAuthState>({
-    username: "",
-    email: "",
-    first_name: "",
-    last_name: "",
-    middle_name: "",
-    phone_number: "",
-    password: "",
-    role: "admin",
-  });
-
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
+const Register = (props: TProps) => {
   const handleMouseDownPassword = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    dispatch(createNewUser(formData));
   };
 
   return (
@@ -71,7 +40,7 @@ const Register = () => {
             </Link>
           </p>
         </div>
-        <form className="form-content" onSubmit={handleSubmit}>
+        <form className="form-content" onSubmit={props.handleSubmit}>
           <div className="form-inputs-signUp">
             <div className="name">
               <TextField
@@ -80,8 +49,8 @@ const Register = () => {
                 label="Имя"
                 variant="outlined"
                 name="first_name"
-                value={formData.first_name}
-                onChange={handleChange}
+                value={props.formData.first_name}
+                onChange={props.handleChange}
               />
               <TextField
                 required
@@ -89,8 +58,8 @@ const Register = () => {
                 label="Фамилия"
                 variant="outlined"
                 name="last_name"
-                value={formData.last_name}
-                onChange={handleChange}
+                value={props.formData.last_name}
+                onChange={props.handleChange}
               />
             </div>
             <TextField
@@ -100,8 +69,8 @@ const Register = () => {
               type="email"
               variant="outlined"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={props.formData.email}
+              onChange={props.handleChange}
             />
             <TextField
               required
@@ -110,8 +79,8 @@ const Register = () => {
               type="tel"
               variant="outlined"
               name="phone_number"
-              value={formData.phone_number}
-              onChange={handleChange}
+              value={props.formData.phone_number}
+              onChange={props.handleChange}
             />
             <TextField
               required
@@ -119,28 +88,28 @@ const Register = () => {
               label="Имя пользователя"
               variant="outlined"
               name="username"
-              value={formData.username}
-              onChange={handleChange}
+              value={props.formData.username}
+              onChange={props.handleChange}
             />
             <TextField
               required
-              type={showPassword ? "text" : "password"}
+              type={props.showPassword ? "text" : "password"}
               className="fieldInput"
               label="Пароль"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={props.formData.password}
+              onChange={props.handleChange}
               variant="outlined"
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={props.handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? (
+                      {props.showPassword ? (
                         <VisibilityOffOutlinedIcon />
                       ) : (
                         <VisibilityOutlinedIcon />
@@ -152,7 +121,7 @@ const Register = () => {
             />
             <TextField
               required
-              type={showPassword ? "text" : "password"}
+              type={props.showPassword ? "text" : "password"}
               className="fieldInput"
               label="Повторите пароль"
               variant="outlined"
@@ -161,11 +130,11 @@ const Register = () => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={props.handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? (
+                      {props.showPassword ? (
                         <VisibilityOffOutlinedIcon />
                       ) : (
                         <VisibilityOutlinedIcon />
@@ -181,14 +150,11 @@ const Register = () => {
               Создать аккаунт
             </Button>
           </div>
-          {isLoading ? <CircularProgress /> : ""}
-          {isError ? (
+          {props.isLoading && <CircularProgress />}
+          {props.isError && (
             <Alert variant="filled" severity="error">
-              {" "}
-              {isError}{" "}
+              {props.isError}
             </Alert>
-          ) : (
-            ""
           )}
         </form>
       </div>

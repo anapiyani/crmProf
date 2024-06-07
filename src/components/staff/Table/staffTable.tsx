@@ -1,4 +1,4 @@
-import "./clientsTable.scss";
+import "./adminTable.scss";
 import {
   Table,
   TableBody,
@@ -18,7 +18,7 @@ type TProps = {
   loading: boolean;
 };
 
-const ClientsTable = (props: TProps) => {
+const StaffTable = (props: TProps) => {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -60,7 +60,7 @@ const ClientsTable = (props: TProps) => {
                 client.last_name || ""
               }`}</TableCell>
               <TableCell>{client.phone_number || ""}</TableCell>
-              <TableCell>Клиент</TableCell>
+              <TableCell>Сотрудники</TableCell>{" "}
             </TableRow>
           ))}
         </TableBody>
@@ -69,4 +69,4 @@ const ClientsTable = (props: TProps) => {
   );
 };
 
-export default ClientsTable;
+export default StaffTable;

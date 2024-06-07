@@ -10,67 +10,39 @@ import {
   IconButton,
   InputAdornment,
 } from "@mui/material";
-import { AppDispatch, RootState } from "../../../containers/store/store";
-import { useDispatch, useSelector } from "react-redux";
-import { signInUser } from "../../../containers/store/login.slice";
-import { TLoginState } from "../../../types/types";
 import "./login.scss";
-import { fetchUserData } from "../../../containers/store/user.slice";
-import { resetSuccess } from "../../../containers/store/auth.slice";
 
-const Login = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
-  const isSuccess = useSelector(
-    (state: RootState) => state.login.isSuccessLogin
-  );
-  const isSuccesLogin = useSelector(
-    (state: RootState) => state.login.isSuccessLogin
-  );
-  const isSuccessRegiser = useSelector(
-    (state: RootState) => state.auth.isSuccess
-  );
-  const isError = useSelector((state: RootState) => state.login.isError);
-  const isLoading = useSelector((state: RootState) => state.login.isLoading);
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+type TProps = {
+  loginHandler: (email: string, password: string) => void;
+  isError: string | null;
+  showPassword: boolean;
+  handleClickShowPassword: () => void;
+  isSuccessRegiser: boolean;
+  isLoading: boolean;
+};
+
+const Login = (props: TProps) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (isSuccesLogin) {
-      dispatch(fetchUserData());
-      navigate("/dashboard");
-    }
-
-    if (isSuccessRegiser) {
-      setInterval(() => {
-        dispatch(resetSuccess());
-      }, 2500);
-    }
-
-    if (isError) {
-      setError(isError);
+    if (props.isError) {
+      setError(props.isError);
       setInterval(() => {
         setError(null);
       }, 2500);
     }
-  }, [isSuccess, isError, dispatch, history]);
+  });
 
-  const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
   };
 
   const loginHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const loginData: TLoginState = {
-      email: email,
-      password: password,
-    };
-    dispatch(signInUser(loginData));
+    props.loginHandler(email, password);
   };
-
   return (
     <div className="login-container">
       <div className="signIn-container">
@@ -94,7 +66,7 @@ const Login = () => {
             />
             <TextField
               required
-              type={showPassword ? "text" : "password"}
+              type={props.showPassword ? "text" : "password"}
               className="fieldInput"
               label="Пароль"
               variant="outlined"
@@ -104,11 +76,11 @@ const Login = () => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={props.handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? (
+                      {props.showPassword ? (
                         <VisibilityOffOutlinedIcon />
                       ) : (
                         <VisibilityOutlinedIcon />
@@ -127,17 +99,17 @@ const Login = () => {
               Войти
             </Button>
           </div>
-          {isSuccessRegiser && (
+          {props.isSuccessRegiser && (
             <Alert severity="success" variant="filled">
               Аккаунт успешно создан!
             </Alert>
           )}
-          {error && (
+          {props.isError && (
             <Alert severity="error" variant="filled">
               {error}
             </Alert>
           )}
-          {isLoading && <CircularProgress />}
+          {props.isLoading && <CircularProgress />}
         </form>
       </div>
     </div>

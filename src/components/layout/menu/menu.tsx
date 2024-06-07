@@ -11,6 +11,7 @@ import { TuserData } from "../../../types/types";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchUserData } from "../../../containers/store/user.slice";
+import SupervisorAccountOutlinedIcon from "@mui/icons-material/SupervisorAccountOutlined";
 import "./menu.scss";
 
 const Menu = () => {
@@ -61,8 +62,7 @@ const Menu = () => {
             <ul>
               <li className="menu-link-item">
                 <NavLink className="menu-link" to="/">
-                  <DashboardOutlinedIcon className="icon-menu" /> Панель
-                  управления
+                  <DashboardOutlinedIcon className="icon-menu" /> Сервисы
                 </NavLink>
               </li>
               <li className="menu-link-item">
@@ -73,6 +73,11 @@ const Menu = () => {
               <li className="menu-link-item">
                 <NavLink className="menu-link" to="/clients">
                   <PeopleAltOutlinedIcon className="icon-menu" /> Клиенты
+                </NavLink>
+              </li>
+              <li className="menu-link-item">
+                <NavLink className="menu-link" to="/admins">
+                  <SupervisorAccountOutlinedIcon className="icon-menu" /> Админы
                 </NavLink>
               </li>
               <li className="menu-link-item">

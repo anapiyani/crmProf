@@ -1,12 +1,13 @@
-import { TAuthStateInit } from "../../types/types";
-import "./clients.scss";
-import ClientsTable from "./clientsTable/clientsTable";
+import { TAuthState, TAuthStateInit } from "../../types/types";
+import "./admins.scss";
+import ClientsTable from "./Table/adminTable";
 
 type TProps = {
   clients: TAuthStateInit[];
   loading: boolean;
 };
-const Clients = (props: TProps) => {
+
+const Admins = (props: TProps) => {
   return (
     <div className="clients">
       <div className="clients-side">
@@ -16,4 +17,4 @@ const Clients = (props: TProps) => {
   );
 };
 
-export default Clients;
+export default Admins;

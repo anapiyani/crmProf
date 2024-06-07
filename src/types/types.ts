@@ -29,3 +29,23 @@ export type TuserData = {
   user_permissions: [];
   username: null | string;
 };
+
+export type TServices = {
+  id: number;
+  created_at: string;
+  description: string;
+  duration: string;
+  name: string;
+  price: string;
+  updated_at: string;
+};
+
+export type TAuthStateInit = {
+  id: number;
+  email: string;
+  first_name: string | null;
+  last_name: string | null;
+  middle_name: string | null;
+  role: string;
+  phone_number: string | null;
+};
