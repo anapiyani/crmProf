@@ -8,6 +8,7 @@ import ClientsContainer from "./containers/clientsContainer/clientsContainer";
 import AdminsContainer from "./containers/adminsContainer/adminsContainer";
 import StaffContainer from "./containers/staffContainer/staffContainer";
 import ServicesContainer from "./containers/servicesContainer/services";
+import ProfileComponent from "./components/profile/profile";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/clients" element={<ClientsContainer />} />
             <Route path="/admins" element={<AdminsContainer />} />
             <Route path="/staff" element={<StaffContainer />} />
+            <Route path="/profile" element={<ProfileComponent />} />
           </Route>
         </Routes>
       </BrowserRouter>

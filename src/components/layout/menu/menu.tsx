@@ -48,7 +48,7 @@ const Menu = () => {
                 {/* <img src={} alt="" /> */}
                 <AccountCircleOutlinedIcon className="icon" />
               </div>
-              <NavLink to="/settings" className="user-info">
+              <NavLink to="/profile" className="user-info">
                 <div className="names">
                   <h3>
                     {user?.first_name} {user?.last_name}

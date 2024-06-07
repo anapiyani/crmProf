@@ -1,0 +1,59 @@
+@import '../../assets/variavbles.scss';
+.profile-container {
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: $ff;
+  }
+  
+  .profile-heading {
+    color: $primary-color;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details {
+    p {
+      margin: 10px 0;
+    }
+  
+    strong {
+      font-weight: bold;
+      color: $primary-color;
+    }
+  
+    .button-container {
+      margin-top: 20px;
+  
+      button {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+  
+      .edit-button {
+        background-color: $primary-color;
+        color: $white;
+      }
+  
+      .edit-button:hover {
+        background-color: darken($primary-color, 10%);
+      }
+  
+      .logout-button {
+        background-color: #ff6961;
+        color: $white;
+      }
+  
+      .logout-button:hover {
+        background-color: darken(#ff6961, 10%);
+      }
+    }
+  }
+  
