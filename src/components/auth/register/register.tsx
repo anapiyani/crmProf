@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AppDispatch, RootState } from '../../../containers/store/store';
 import { IconButton, InputAdornment, CircularProgress, Alert } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,9 +19,11 @@ const Register = () => {
     const isSuccess = useSelector((state: RootState) => state.auth.isSuccess);
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
-    if (isSuccess) {
-        navigate('/login');
-    }
+    useEffect(() => {
+        if (isSuccess) {
+            navigate('/login');
+        }
+    }, [isSuccess, navigate, dispatch]);
 
     const [formData, setFormData] = useState<TAuthState>({
         username: '',
@@ -161,7 +163,6 @@ const Register = () => {
                     </div>
                     { isLoading ? <CircularProgress/> : '' }
                     { isError ? <Alert variant="filled" severity="error"> {isError} </Alert> : '' }
-                    { isSuccess ? <Alert variant='filled' severity='success'>Аккаунт создан!</Alert> : '' }
                 </form>
             </div>
         </div>

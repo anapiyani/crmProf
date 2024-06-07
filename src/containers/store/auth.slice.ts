@@ -33,7 +33,11 @@ export const signInUser = createAsyncThunk(
 const authSlice = createSlice({
     name: 'auth',
     initialState: authState,
-    reducers: {},
+    reducers: {
+        resetSuccess(state) {
+            state.isSuccess = false;
+        }
+    },
     extraReducers(builder) {
         builder
         .addCase(createNewUser.pending, (state) => {
@@ -44,14 +48,16 @@ const authSlice = createSlice({
         .addCase(createNewUser.rejected, (state, action) => {
             state.isLoading = false
             state.isSuccess = false
-            state.isError = action.error.message || 'Упс, какая то ошибка. Попробуйте еще раз';
+            state.isError = 'Упс, какая то ошибка. Попробуйте еще раз' || action.error.message;
         })
         .addCase(createNewUser.fulfilled, (state, action) => {
             state.isLoading = false
-            state.isError = null,
+            state.isError = null
             state.isSuccess = true
         })
     },
 })
 
+
+export const { resetSuccess } = authSlice.actions;
 export default authSlice.reducer;

@@ -4,15 +4,16 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
-import { IconButton, InputAdornment } from '@mui/material';
-import { AppDispatch } from '../../../containers/store/store';
-import { useDispatch } from 'react-redux';
-import { signInUser } from '../../../containers/store/auth.slice';
+import { Alert, IconButton, InputAdornment } from '@mui/material';
+import { AppDispatch, RootState } from '../../../containers/store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetSuccess, signInUser } from '../../../containers/store/auth.slice';
 import { TLoginState } from '../../../types/types';
 import './login.scss';
 
 const Login = () => {
     const dispatch = useDispatch<AppDispatch>();
+    const isSuccessCreated = useSelector((state: RootState) => state.auth.isSuccess);
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -29,6 +30,12 @@ const Login = () => {
             password: password,
         }
         dispatch(signInUser(loginData))
+    }
+
+    if (isSuccessCreated) {
+        setInterval(() => {
+            dispatch(resetSuccess());
+        }, 2000)
     }
 
     return (
@@ -68,6 +75,9 @@ const Login = () => {
                     <div className="buttons">
                         <Button type="submit" className='button' variant='contained'>Войти</Button>
                     </div>
+                    {
+                        isSuccessCreated ? <Alert severity='success' variant='filled'>Аккаунт успешно создан!</Alert> : ''
+                    }
                 </form>
             </div>
         </div>
