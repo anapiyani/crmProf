@@ -40,12 +40,11 @@ const Login = () => {
                 </div>
                 <form onSubmit={(e) => loginHandler(e)} className="form-content">
                     <div className="form-inputs">
-                        <TextField required className='fieldInput' onChange={(e) => setEmail(e.target.value)} id="outlined-basic" label="Email" variant="outlined" />
+                        <TextField required className='fieldInput' onChange={(e) => setEmail(e.target.value)} label="Email" variant="outlined" />
                         <TextField
                             required
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Пароль"
                             variant="outlined"
                             onChange={(e) => setPassword(e.target.value)}

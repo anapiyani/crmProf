@@ -1,8 +1,8 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { AppDispatch } from '../../../containers/store/store';
-import { IconButton, InputAdornment } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { AppDispatch, RootState } from '../../../containers/store/store';
+import { IconButton, InputAdornment, CircularProgress, Alert } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 import { TAuthState } from '../../../types/types';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -13,7 +13,15 @@ import './register.scss';
 
 const Register = () => {
     const dispatch = useDispatch<AppDispatch>();
+    const navigate = useNavigate();
+    const isLoading = useSelector((state: RootState) => state.auth.isLoading);
+    const isError = useSelector((state: RootState) => state.auth.isError);
+    const isSuccess = useSelector((state: RootState) => state.auth.isSuccess);
     const [showPassword, setShowPassword] = useState<boolean>(false);
+
+    if (isSuccess) {
+        navigate('/login');
+    }
 
     const [formData, setFormData] = useState<TAuthState>({
         username: '',
@@ -23,6 +31,7 @@ const Register = () => {
         middle_name: '',
         phone_number: '',
         password: '',
+        role: 'admin',
     });
 
     const handleClickShowPassword = () => setShowPassword(!showPassword);
@@ -56,7 +65,6 @@ const Register = () => {
                             <TextField
                                 required
                                 className='fieldInputSignUp'
-                                id="outlined-basic"
                                 label="Имя"
                                 variant="outlined"
                                 name="first_name"
@@ -66,7 +74,6 @@ const Register = () => {
                             <TextField
                                 required
                                 className='fieldInputSignUp'
-                                id="outlined-basic"
                                 label="Фамилия"
                                 variant="outlined"
                                 name="last_name"
@@ -77,7 +84,6 @@ const Register = () => {
                         <TextField
                             required
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Email"
                             type='email'
                             variant="outlined"
@@ -88,7 +94,6 @@ const Register = () => {
                         <TextField
                             required
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Номер телефона"
                             type="tel"
                             variant="outlined"
@@ -99,7 +104,6 @@ const Register = () => {
                         <TextField
                             required
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Имя пользователя"
                             variant="outlined"
                             name="username"
@@ -110,7 +114,6 @@ const Register = () => {
                             required
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Пароль"
                             name="password"
                             value={formData.password}
@@ -135,7 +138,6 @@ const Register = () => {
                             required
                             type={showPassword ? 'text' : 'password'}
                             className='fieldInput'
-                            id="outlined-basic"
                             label="Повторите пароль"
                             variant="outlined"
                             InputProps={{
@@ -157,6 +159,9 @@ const Register = () => {
                     <div className="buttons">
                         <Button className='button' variant='contained' type="submit">Создать аккаунт</Button>
                     </div>
+                    { isLoading ? <CircularProgress/> : '' }
+                    { isError ? <Alert variant="filled" severity="error"> {isError} </Alert> : '' }
+                    { isSuccess ? <Alert variant='filled' severity='success'>Аккаунт создан!</Alert> : '' }
                 </form>
             </div>
         </div>

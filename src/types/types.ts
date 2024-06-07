@@ -6,6 +6,7 @@ export type TAuthState = {
     middle_name: string;
     phone_number: string;
     password: string,
+    role: string,
 };
 
 export type TLoginState = {
